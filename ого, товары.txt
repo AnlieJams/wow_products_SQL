@@ -1,0 +1,27 @@
+--1. Задание
+SELECT Products.ProductName, Manufacturers.ManufacturerName
+FROM Products
+LEFT JOIN Manufacturers ON Products.ManufacturerID = Manufacturers.ManufacturerID;
+
+--2. ЗАдАние
+SELECT Categories.CategoryName
+FROM Categories
+LEFT JOIN Products ON Categories.CategoryID = Products.CategoryID
+WHERE Products.ProductID IS NULL;
+
+--3. ЗаДаНИЕ
+SELECT RegionName
+FROM Regions
+EXCEPT
+SELECT RegionName
+FROM Manufacturers;
+
+--4. З А ДА Н  И е
+SELECT CategoryName
+FROM Categories
+EXCEPT
+SELECT CategoryName
+FROM Products
+JOIN Manufacturers ON Products.ManufacturerID = Manufacturers.ManufacturerID
+WHERE Manufacturers.ManufacturerName = '000 «Нли Ю»';
+
